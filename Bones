@@ -1,0 +1,9 @@
+export default (req, res) => {
+  const p = Math.floor(Math.random()*101);
+  const msg = p<=20 ? "🦴 Your bones are dust… drink milk before you crumble 💀"
+    : p<=50 ? "🥛 Not bad, but you’re more chalk than calcium 😅"
+    : p<=80 ? "😏 Solid frame — strong femur energy"
+    : "🔥 Bones could pierce the heavens — legendary!";
+  res.setHeader("Content-Type","text/plain; charset=utf-8");
+  res.status(200).send(`${p}% — ${msg}`);
+};
